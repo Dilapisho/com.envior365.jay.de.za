@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Set;
+
 @Entity
 @Getter
 @Setter
@@ -16,10 +18,12 @@ public class WasteCategoryEntity {
     private Long id;
     @Column(name = "display_name")
     private String displayName;
-    @Column(name = "code")
+    @Column(name = "code", unique = true)
     private String code;
     @Column(name = "description")
     private String description;
+    @OneToMany(mappedBy="wasteCategory")
+    private Set<DisposalGuideLineEntity> disposalGuidelines;
 
 
 }
