@@ -526,3 +526,415 @@ VALUES ((SELECT id FROM waste_category WHERE code = 'sewage_sludge'), 'Environme
 INSERT INTO disposal_guideline(waste_category_code, display_name, content)
 VALUES ((SELECT id FROM waste_category WHERE code = 'sewage_sludge'), 'Regular Review and Improvement',
         'Regularly review sewage sludge management practices to identify opportunities for improvement. Monitor sludge quality, treatment processes, and environmental compliance to ensure ongoing effectiveness and regulatory compliance.');
+
+INSERT INTO recycling_tips(waste_category_code, display_name, content)
+VALUES ((SELECT id FROM waste_category WHERE code = 'healthcare_waste'),
+    'Separate Recyclable Materials',
+    'Ensure to separate recyclable materials such as plastics, glass, and paper from non-recyclable healthcare waste during disposal.'
+    );
+
+INSERT INTO recycling_tips(waste_category_code, display_name, content)
+VALUES ((SELECT id FROM waste_category WHERE code = 'healthcare_waste'),
+           'Implement Waste Segregation',
+           'Establish a waste segregation program to properly sort different types of medical waste for recycling and appropriate disposal.'
+       );
+
+INSERT INTO recycling_tips(waste_category_code, display_name, content)
+VALUES ((SELECT id FROM waste_category WHERE code = 'healthcare_waste'),
+           'Invest in Reusable Equipment',
+           'Consider investing in durable, reusable medical equipment and supplies to reduce the generation of single-use waste materials.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES ((SELECT id FROM waste_category WHERE code = 'healthcare_waste'),
+           'Partner with Recycling Facilities',
+           'Collaborate with certified recycling facilities specialized in processing healthcare waste to ensure proper recycling and disposal procedures.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES ((SELECT id FROM waste_category WHERE code = 'healthcare_waste'),
+           'Educate Staff on Recycling',
+           'Provide training and education sessions for healthcare staff on proper recycling practices, including segregation, handling, and disposal of recyclable medical waste.'
+       );
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'pesticide_waste'),
+           'Proper Storage and Labeling',
+           'Ensure proper storage and labeling of pesticide waste containers to prevent leaks and spills, and to facilitate safe recycling and disposal.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'pesticide_waste'),
+           'Use of Biodegradable Alternatives',
+           'Consider using biodegradable pesticides or alternatives to reduce the generation of hazardous pesticide waste.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'pesticide_waste'),
+           'Recycle Empty Containers',
+           'Recycle empty pesticide containers according to local regulations and guidelines to minimize environmental impact.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'pesticide_waste'),
+           'Proper Disposal of Unused Pesticides',
+           'Dispose of unused or expired pesticides through authorized collection programs or hazardous waste disposal facilities to prevent environmental contamination.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'pesticide_waste'),
+           'Education and Training',
+           'Provide education and training to pesticide users on proper handling, storage, and disposal practices to minimize pesticide waste and environmental impact.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'asbestos_waste'),
+           'Conduct a Survey',
+           'Before any renovation or demolition project, conduct a survey to identify asbestos-containing materials (ACMs) and plan for their safe removal and recycling.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'asbestos_waste'),
+           'Use Certified Contractors',
+           'Hire certified contractors with expertise in asbestos removal and recycling to ensure safe handling, transportation, and disposal of asbestos waste.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'asbestos_waste'),
+           'Use Wet Methods for Removal',
+           'Employ wet methods such as misting or wetting asbestos-containing materials during removal to minimize the release of asbestos fibers into the air.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'asbestos_waste'),
+           'Proper Packaging and Labeling',
+           'Package and label asbestos waste securely in leak-proof containers and clearly mark them as containing asbestos to prevent accidental exposure.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'asbestos_waste'),
+           'Dispose at Licensed Facilities',
+           'Dispose of asbestos waste at licensed facilities equipped to handle hazardous materials, ensuring proper recycling or disposal according to regulations.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'batteries'),
+           'Use Rechargeable Batteries',
+           'Opt for rechargeable batteries instead of single-use batteries to reduce the quantity of battery waste generated and promote reuse.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'batteries'),
+           'Locate Battery Recycling Centers',
+           'Find local battery recycling centers or drop-off locations where you can safely dispose of used batteries for recycling and proper disposal.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'batteries'),
+           'Separate Batteries for Recycling',
+           'Segregate used batteries from other household waste and store them in a designated container for recycling purposes.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'batteries'),
+           'Check Local Regulations',
+           'Be aware of local regulations regarding the disposal and recycling of batteries, and follow guidelines for safe handling and recycling.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'batteries'),
+           'Participate in Recycling Programs',
+           'Participate in battery recycling programs offered by manufacturers, retailers, or local authorities to ensure proper recycling and disposal of used batteries.'
+       );
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'power_station_waste'),
+           'Implement Waste Segregation',
+           'Establish a waste segregation system to separate recyclable materials such as metals, plastics, and glass from non-recyclable waste generated at power stations.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'power_station_waste'),
+           'Promote Material Recovery',
+           'Encourage the recovery of valuable materials from power station waste streams through recycling initiatives, such as reclaiming metals and other reusable materials.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'power_station_waste'),
+           'Explore Energy Recovery Options',
+           'Investigate energy recovery technologies to convert certain types of power station waste into energy, reducing dependence on fossil fuels and mitigating environmental impact.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'power_station_waste'),
+           'Partner with Recycling Facilities',
+           'Collaborate with recycling facilities and waste management companies to develop efficient recycling processes for power station waste, ensuring maximum recovery and reuse.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'power_station_waste'),
+           'Continuous Improvement and Innovation',
+           'Foster a culture of continuous improvement and innovation to explore new methods and technologies for recycling power station waste, optimizing resource recovery and minimizing environmental impact.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'construction'),
+           'Sort and Separate Materials On-Site',
+           'Implement a system to sort and separate construction waste materials on-site to facilitate recycling and reduce landfill disposal.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'construction'),
+           'Recycle Concrete and Masonry Waste',
+           'Recycle concrete, bricks, and other masonry waste by crushing and processing them into aggregate for new construction projects or road base material.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'construction'),
+           'Reuse Salvaged Materials',
+           'Identify salvageable materials such as doors, windows, and fixtures, and reuse them in renovation projects or donate them to organizations for reuse.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'construction'),
+           'Utilize Wood Waste for Biomass or Mulch',
+           'Process wood waste from construction sites into biomass fuel for energy generation or grind it into mulch for landscaping applications.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'construction'),
+           'Educate Workers on Recycling Practices',
+           'Provide training and educational materials to construction workers on proper recycling practices, including sorting, handling, and disposal of construction waste.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'domestic_waste'),
+           'Separate Recyclables from General Waste',
+           'Designate separate bins or containers for recyclable materials such as paper, plastics, glass, and metals to facilitate recycling efforts at home.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'domestic_waste'),
+           'Compost Organic Waste',
+           'Compost food scraps, yard waste, and other organic materials to produce nutrient-rich compost for gardening and landscaping purposes.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'domestic_waste'),
+           'Reduce Single-Use Plastics',
+           'Minimize the use of single-use plastics such as bags, bottles, and packaging by opting for reusable alternatives and avoiding unnecessary purchases.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'domestic_waste'),
+           'Donate or Sell Unused Items',
+           'Donate gently used clothing, furniture, electronics, and other items to charity organizations or sell them online to extend their lifespan and reduce waste.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'domestic_waste'),
+           'Educate Household Members',
+           'Educate family members about the importance of recycling, composting, and waste reduction practices to promote a culture of sustainability at home.'
+       );
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'oil'),
+           'Recycle Used Cooking Oil',
+           'Collect and recycle used cooking oil from kitchens and food establishments to be processed into biodiesel fuel or other industrial products.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'oil'),
+           'Utilize Oil Absorbent Materials',
+           'Use oil absorbent materials such as absorbent pads or mats to contain and clean up small oil spills, then recycle or dispose of them properly.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'oil'),
+           'Dispose of Automotive Oil Properly',
+           'Take used motor oil to designated collection points or recycling centers for proper disposal or recycling, and never dump it down drains or into the environment.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'oil'),
+           'Reuse Oil for Lubrication',
+           'Reuse clean and filtered oil for lubricating machinery and equipment where applicable, extending its useful life before eventual recycling or disposal.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'oil'),
+           'Support Oil Recycling Programs',
+           'Participate in local oil recycling programs or initiatives that promote the responsible collection, recycling, and reuse of used oil to prevent environmental pollution.'
+       );
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'electronic_waste'),
+           'Recycle E-Waste Responsibly',
+           'Dispose of electronic waste responsibly by recycling it through authorized e-waste recycling facilities or programs to prevent environmental pollution.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'electronic_waste'),
+           'Donate Working Electronics',
+           'Donate working electronics such as computers, laptops, and smartphones to charities or organizations for reuse by those in need.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'electronic_waste'),
+           'Participate in Manufacturer Take-Back Programs',
+           'Participate in manufacturer take-back programs offered by electronic device manufacturers to return old devices for proper recycling and disposal.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'electronic_waste'),
+           'Securely Erase Data Before Recycling',
+           'Ensure to securely erase personal data from electronic devices before recycling them to protect your privacy and prevent data breaches.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'electronic_waste'),
+           'Educate Others on E-Waste Recycling',
+           'Raise awareness about the importance of e-waste recycling by educating friends, family, and colleagues on the benefits and proper methods of recycling electronic devices.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'fluorescent_lamps'),
+           'Use Proper Containers for Storage',
+           'Store used fluorescent lamps in designated containers or boxes to prevent breakage and contain any potential release of mercury vapor.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'fluorescent_lamps'),
+           'Recycle Fluorescent Lamps',
+           'Recycle used fluorescent lamps through specialized recycling programs or facilities to recover valuable materials and prevent environmental contamination.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'fluorescent_lamps'),
+           'Handle Broken Lamps Safely',
+           'If a fluorescent lamp breaks, carefully clean up and dispose of the broken pieces following safety guidelines to minimize exposure to mercury and other hazardous substances.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'fluorescent_lamps'),
+           'Participate in Retailer Take-Back Programs',
+           'Take advantage of retailer take-back programs that accept used fluorescent lamps for recycling when purchasing new lamps, ensuring proper disposal of old ones.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'fluorescent_lamps'),
+           'Educate Others on Proper Disposal',
+           'Educate others in your community about the importance of proper disposal of fluorescent lamps to protect public health and the environment from mercury pollution.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'pop_waste'),
+           'Reduce POP Waste Generation',
+           'Minimize the generation of POP waste by opting for sustainable and eco-friendly materials in promotional materials and packaging designs.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'pop_waste'),
+           'Reuse POP Materials',
+           'Reuse POP materials such as display racks, banners, and signage for multiple promotions or events to extend their lifespan and reduce waste.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'pop_waste'),
+           'Recycle POP Packaging',
+           'Ensure that POP packaging materials such as cardboard, plastic, and paper are recyclable, and encourage customers to recycle them after use.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'pop_waste'),
+           'Choose Biodegradable POP Materials',
+           'Opt for biodegradable or compostable materials for POP displays and promotional items to minimize environmental impact at the end of their lifecycle.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'pop_waste'),
+           'Educate Stakeholders on Sustainable Practices',
+           'Educate employees, suppliers, and customers on sustainable practices for managing POP waste, emphasizing the importance of recycling and waste reduction.'
+       );
+
+-- Tip 1: Utilize Sewage Sludge as Soil Amendment
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'sewage_sludge'),
+           'Utilize Sewage Sludge as Soil Amendment',
+           'Apply treated sewage sludge as a nutrient-rich soil amendment in agriculture and landscaping to improve soil fertility and structure.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'sewage_sludge'),
+           'Convert Sewage Sludge into Biogas',
+           'Utilize anaerobic digestion processes to convert sewage sludge into biogas, a renewable energy source used for heat and power generation.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'sewage_sludge'),
+           'Explore Thermal Treatment Options',
+           'Investigate thermal treatment technologies such as incineration or pyrolysis to reduce sewage sludge volume and recover energy or resources from the process.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'sewage_sludge'),
+           'Implement Phosphorus Recovery Processes',
+           'Implement technologies for phosphorus recovery from sewage sludge to recycle valuable nutrients for agricultural fertilizers and other applications.'
+       );
+
+INSERT INTO recycling_tips (waste_category_code, display_name, content)
+VALUES (
+           (SELECT id FROM waste_category WHERE code = 'sewage_sludge'),
+           'Monitor Environmental Impacts and Compliance',
+           'Regularly monitor environmental impacts of sewage sludge management practices and ensure compliance with regulations to protect public health and ecosystems.'
+       );

@@ -3,8 +3,7 @@ package com.enviro.assessment.grad001.mofokengdilapisho.controller;
 import com.enviro.assessment.grad001.mofokengdilapisho.service.DisposalGuidelineService;
 import com.enviro.assessment.grad001.mofokengdilapisho.service.model.DisposalGuideline;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -24,4 +23,24 @@ public class DisposalGuidelineController {
         return ResponseEntity.ok(all);
 
     }
+    @PutMapping()
+    public ResponseEntity<DisposalGuideline> updateDisposalGuideLine(@RequestBody DisposalGuideline disposalGuideline){
+        DisposalGuideline updateDisposalGuideLine = disposalGuidelineService.updateDisposalGuideLines(disposalGuideline);
+        return ResponseEntity.ok(updateDisposalGuideLine);
+    }
+
+    @PostMapping()
+    public ResponseEntity<DisposalGuideline> createDisposalGuideLine(@RequestBody DisposalGuideline disposalGuideline){
+        DisposalGuideline createDisposalGuideLine = disposalGuidelineService.createDisposalGuideLine(disposalGuideline);
+        return ResponseEntity.ok(createDisposalGuideLine);
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void>deletedDisposalGuideLine(@PathVariable("id") Long id){
+        disposalGuidelineService.deletedDisposalGuideLine(id);
+        return ResponseEntity.ok().build();
+    }
+
+
+
+
 }

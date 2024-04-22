@@ -4,11 +4,10 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
-public class DisposalGuideline {
-    @NotNull(message = "Disposal GuideLine cannot be null for this operation")
+public class RecyclingTips {
+    @NotNull(message = "Recycling Tip cannot be null for this operation")
     private Long id;
     private String wasteCategoryCode;
     private String displayName;
     private String content;
-
 }

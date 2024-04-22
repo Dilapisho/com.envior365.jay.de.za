@@ -7,8 +7,8 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name ="disposal_guideline")
-public class DisposalGuideLineEntity {
+@Table(name ="recycling_tips")
+public class RecyclingTipsEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -24,6 +24,5 @@ public class DisposalGuideLineEntity {
 
     @Column(name = "content")
     private String content;
-
 
 }
