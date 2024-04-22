@@ -2,7 +2,6 @@ package com.enviro.assessment.grad001.mofokengdilapisho.controller;
 
 import com.enviro.assessment.grad001.mofokengdilapisho.service.DisposalGuidelineService;
 import com.enviro.assessment.grad001.mofokengdilapisho.service.model.DisposalGuideline;
-import com.enviro.assessment.grad001.mofokengdilapisho.service.model.WasteCategory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,10 +17,11 @@ public class DisposalGuidelineController {
     public DisposalGuidelineController(DisposalGuidelineService disposalGuidelineService) {
         this.disposalGuidelineService = disposalGuidelineService;
     }
-/*
+
     @GetMapping()
     public ResponseEntity<List<DisposalGuideline>> findAll(){
-        List<WasteCategory> wasteCategories = this.disposalGuidelineService.getAllWasteCategories();
+        List<DisposalGuideline> all = this.disposalGuidelineService.findAll();
+        return ResponseEntity.ok(all);
 
-    }*/
+    }
 }
