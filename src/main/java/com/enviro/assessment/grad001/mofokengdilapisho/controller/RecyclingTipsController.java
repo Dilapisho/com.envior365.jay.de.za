@@ -4,7 +4,6 @@ import com.enviro.assessment.grad001.mofokengdilapisho.service.RecyclingTipsServ
 import com.enviro.assessment.grad001.mofokengdilapisho.service.model.RecyclingTips;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -28,6 +27,12 @@ public class RecyclingTipsController {
         RecyclingTips updateRecyclingTips = recyclingTipsService.updateRecyclingTips(recyclingTips);
         return ResponseEntity.ok(updateRecyclingTips);
 
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<RecyclingTips> findById(@PathVariable Long id) {
+        RecyclingTips all = this.recyclingTipsService.findById(id);
+        return ResponseEntity.ok(all);
     }
     @PostMapping()
     public ResponseEntity<RecyclingTips> createRecyclingTips(@RequestBody RecyclingTips recyclingTips){

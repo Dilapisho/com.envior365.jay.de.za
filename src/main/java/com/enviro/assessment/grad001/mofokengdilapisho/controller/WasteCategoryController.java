@@ -5,7 +5,6 @@ import com.enviro.assessment.grad001.mofokengdilapisho.service.dto.WasteCategory
 import com.enviro.assessment.grad001.mofokengdilapisho.service.model.WasteCategory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -23,6 +22,13 @@ public class WasteCategoryController {
     public ResponseEntity<List<WasteCategory>> getAllCategories() {
         List<WasteCategory> all = this.wasteCategoryService.findAll();
         return ResponseEntity.ok(all);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<WasteCategory> getCategoryById(@PathVariable Long id) {
+        WasteCategory all = this.wasteCategoryService.findById(id);
+        return ResponseEntity.ok(all);
+
     }
 
 

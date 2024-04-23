@@ -1,12 +1,11 @@
 package com.enviro.assessment.grad001.mofokengdilapisho.service;
 
+import com.enviro.assessment.grad001.mofokengdilapisho.exception.ApiRequestException;
 import com.enviro.assessment.grad001.mofokengdilapisho.service.entity.RecyclingTipsEntity;
 import com.enviro.assessment.grad001.mofokengdilapisho.service.entity.WasteCategoryEntity;
 import com.enviro.assessment.grad001.mofokengdilapisho.service.model.RecyclingTips;
 import com.enviro.assessment.grad001.mofokengdilapisho.service.repository.RecyclingRepository;
 import com.enviro.assessment.grad001.mofokengdilapisho.service.repository.WasteRepository;
-import jakarta.persistence.EntityNotFoundException;
-import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -31,7 +30,18 @@ public class RecyclingTipsService {
 
     }
 
+    public RecyclingTips findById(Long id) {
+        Optional<RecyclingTipsEntity> recyclingTipsEntity = recyclingRepository.findById(id);
+        if (recyclingTipsEntity.isPresent()) {
+            return mapToRecyclingTips(recyclingTipsEntity.get());
+        } else {
+            throw new ApiRequestException("Recycling tips with id " + id + " not found");
+        }
+    }
+
     private RecyclingTips mapToRecyclingTips(RecyclingTipsEntity entity) {
+        if (entity == null) return null;
+
         RecyclingTips recyclingTips = new RecyclingTips();
         recyclingTips.setId(entity.getId());
         recyclingTips.setDisplayName(entity.getDisplayName());
@@ -48,13 +58,13 @@ public class RecyclingTipsService {
         if(optionalRecyclingTipsEntity.isPresent()){
             RecyclingTipsEntity existingRecyclingEntity = optionalRecyclingTipsEntity.get();
 
-            existingRecyclingEntity .setDisplayName(recyclingTips.getDisplayName());
+            existingRecyclingEntity.setDisplayName(recyclingTips.getDisplayName());
             existingRecyclingEntity.setContent(recyclingTips.getContent());
 
             RecyclingTipsEntity saved = recyclingRepository.save(existingRecyclingEntity);
             return mapToRecyclingTips(saved);
         }else {
-            throw new EntityNotFoundException("Recycling Tip with ID " + recyclingTips.getId() + " does not exist.");
+            throw new ApiRequestException("Recycling Tip with ID " + recyclingTips.getId() + " does not exist.");
 
         }
     }
@@ -63,10 +73,11 @@ public class RecyclingTipsService {
         Optional<WasteCategoryEntity> existingWasteCategory = wasteRepository.findByCode(request.getWasteCategoryCode());
 
         if(existingWasteCategory.isEmpty()){
-            throw new EntityNotFoundException("Waste Category with code " + request.getWasteCategoryCode() + "Not Found");
+            throw new ApiRequestException("Waste Category with code " + request.getWasteCategoryCode() + "Not Found");
+
         }
         if (existingRecyclingTips.isPresent()){
-            throw new DuplicateKeyException("Recycling Tips with ID " + request.getId() + " already exists.");
+            throw new ApiRequestException("Recycling Tips with ID " + request.getId() + " already exists.");
 
         }
         RecyclingTipsEntity recyclingTipsEntity = new RecyclingTipsEntity();
@@ -82,7 +93,7 @@ public class RecyclingTipsService {
         if(recyclingRepository.existsById(recyclingTipsId)){
             recyclingRepository.deleteById(recyclingTipsId);
         }else {
-            throw new EntityNotFoundException("Recycling Tip with ID " + recyclingTipsId + " does not exist.");
+            throw new ApiRequestException("Recycling Tip with ID " + recyclingTipsId + " does not exist.");
         }
     }
 }

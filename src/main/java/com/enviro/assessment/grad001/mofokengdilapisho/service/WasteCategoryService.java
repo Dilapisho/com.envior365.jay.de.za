@@ -1,11 +1,10 @@
 package com.enviro.assessment.grad001.mofokengdilapisho.service;
 
+import com.enviro.assessment.grad001.mofokengdilapisho.exception.ApiRequestException;
 import com.enviro.assessment.grad001.mofokengdilapisho.service.dto.WasteCategoryCreateRequest;
 import com.enviro.assessment.grad001.mofokengdilapisho.service.entity.WasteCategoryEntity;
 import com.enviro.assessment.grad001.mofokengdilapisho.service.model.WasteCategory;
 import com.enviro.assessment.grad001.mofokengdilapisho.service.repository.WasteRepository;
-import jakarta.persistence.EntityNotFoundException;
-import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -41,7 +40,7 @@ public class WasteCategoryService {
 
     public WasteCategory updateWasteCategory(WasteCategory wasteCategory) {
         Optional<WasteCategoryEntity> optionalWasteCategory = wasteRepository.findById(wasteCategory.getId());
-        // Check if the entity exists
+
         if (optionalWasteCategory.isPresent()) {
             WasteCategoryEntity existingWasteCategory = optionalWasteCategory.get();
 
@@ -51,7 +50,7 @@ public class WasteCategoryService {
             WasteCategoryEntity saved = wasteRepository.save(existingWasteCategory);
             return mapToWasteCategory(saved);
         } else {
-            throw new EntityNotFoundException("Waste category with ID " + wasteCategory.getId() + " does not exist.");
+            throw new ApiRequestException("Waste category with ID " + wasteCategory.getId() + " does not exist.");
 
         }
     }
@@ -60,7 +59,7 @@ public class WasteCategoryService {
     public WasteCategory createWasteCategory(WasteCategoryCreateRequest request) {
         Optional<WasteCategoryEntity> existingCategory = wasteRepository.findByCode(request.getCode());
         if (existingCategory.isPresent()) {
-            throw new DuplicateKeyException("Waste category with code " + request.getCode() + " already exists.");
+            throw new ApiRequestException("Waste category with code " + request.getCode() + " already exists.");
         } else {
             WasteCategoryEntity wasteCategoryEntity = new WasteCategoryEntity();
             wasteCategoryEntity.setCode(request.getCode());
@@ -76,7 +75,16 @@ public class WasteCategoryService {
         if (wasteRepository.existsById(categoryId)) {
             wasteRepository.deleteById(categoryId);
         } else {
-            throw new EntityNotFoundException("Waste category with ID " + categoryId + " does not exist.");
+            throw new ApiRequestException("Waste category with ID " + categoryId + " does not exist.");
+        }
+    }
+
+    public WasteCategory findById(Long id) {
+        Optional<WasteCategoryEntity> optionalWasteCategory = wasteRepository.findById(id);
+        if (optionalWasteCategory.isPresent()) {
+            return mapToWasteCategory(optionalWasteCategory.get());
+        } else {
+            throw new ApiRequestException("Waste category with ID " + id + " does not exist.");
         }
     }
 }
